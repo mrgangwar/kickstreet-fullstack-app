@@ -1,0 +1,13 @@
+node_modules/
+.npm-cache/
+.expo/
+dist/
+build/
+coverage/
+npm-debug.log*
+
+# Environment files (actual env files, not examples)
+.env
+.env.local
+backend/.env
+admin-frontend/.env

@@ -1,0 +1,39 @@
+.login-container {
+  width: 350px;
+  margin: 120px auto;
+  padding: 30px;
+  box-shadow: 0px 0px 10px #ccc;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background: white;
+}
+
+.login-container h1 {
+  text-align: center;
+}
+
+.login-container input {
+  padding: 12px;
+  font-size: 16px;
+}
+
+.login-container button {
+  padding: 12px;
+  background: black;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.login-container button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    width: 90%;
+    margin: 80px auto;
+  }
+}
