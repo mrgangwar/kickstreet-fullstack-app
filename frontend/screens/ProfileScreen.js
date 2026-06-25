@@ -90,7 +90,7 @@ export default function ProfileScreen({ navigation }) {
       <ScrollView contentContainerStyle={styles.content} showsVerticalScrollIndicator={false}>
         <Animated.View style={[styles.header, headerStyle]}>
           <LinearGradient
-            colors={[colors.accent || '#E84A27', '#B63316']}
+            colors={[colors.accent || '#C9A24B', '#967432']}
             style={styles.avatarRing}
           >
             <View style={styles.avatar}>
@@ -99,14 +99,14 @@ export default function ProfileScreen({ navigation }) {
           </LinearGradient>
           <Text style={styles.name}>{user.name || 'Your account'}</Text>
           <View style={styles.badge}>
-            <Ionicons name="shield-checkmark-outline" size={11} color={colors.accent || '#E84A27'} />
+            <Ionicons name="shield-checkmark-outline" size={11} color={colors.accent || '#C9A24B'} />
             <Text style={styles.badgeText}>{(user.role || '').toUpperCase()}</Text>
           </View>
         </Animated.View>
 
         <Animated.View style={[styles.card, cardStyle]}>
           <View style={styles.sectionLabel}>
-            <Ionicons name="person-outline" size={13} color={colors.accent || '#E84A27'} />
+            <Ionicons name="person-outline" size={13} color={colors.accent || '#C9A24B'} />
             <Text style={styles.sectionLabelText}>Personal details</Text>
           </View>
 
@@ -170,13 +170,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   avatarText: {
-    color: colors.ink || '#FFFFFF',
+    color: '#FFFFFF',
     fontSize: 26,
     fontWeight: '600',
     letterSpacing: -0.5
   },
   name: {
-    color: colors.ink || '#FFFFFF',
+    color: '#FFFFFF',
     fontSize: 24,
     fontWeight: '700',
     letterSpacing: -0.5
@@ -185,16 +185,16 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    backgroundColor: 'rgba(232,74,39,0.08)',
+    backgroundColor: 'rgba(201,162,75,0.08)',
     borderWidth: 1,
-    borderColor: 'rgba(232,74,39,0.18)',
+    borderColor: 'rgba(201,162,75,0.18)',
     borderRadius: 8,
     paddingHorizontal: 10,
     paddingVertical: 4,
     marginTop: 2
   },
   badgeText: {
-    color: colors.accent || '#E84A27',
+    color: colors.accent || '#C9A24B',
     fontWeight: '600',
     fontSize: 10,
     letterSpacing: 0.8
@@ -226,7 +226,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 2
   },
   sectionLabelText: {
-    color: colors.accent || '#E84A27',
+    color: colors.accent || '#C9A24B',
     fontSize: 11,
     fontWeight: '600',
     textTransform: 'uppercase',

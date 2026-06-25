@@ -7,7 +7,8 @@ import {
   Text,
   View,
   KeyboardAvoidingView,
-  Platform
+  Platform,
+  Pressable
 } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
@@ -94,9 +95,14 @@ export default function CheckoutScreen({ navigation }) {
           keyboardShouldPersistTaps="handled"
           showsVerticalScrollIndicator={false}
         >
-          <View style={styles.headerBlock}>
-            <Text style={styles.eyebrow}>FINAL STEP</Text>
-            <Text style={styles.title}>Checkout</Text>
+          <View style={styles.headerRow}>
+            <Pressable style={styles.backButton} onPress={() => navigation.goBack()}>
+              <Ionicons name="chevron-back" size={20} color="#FFFFFF" />
+            </Pressable>
+            <View style={styles.headerBlock}>
+              <Text style={styles.eyebrow}>FINAL STEP</Text>
+              <Text style={styles.title}>Checkout</Text>
+            </View>
           </View>
 
           <Animated.View style={[styles.summaryCard, summaryStyle]}>
@@ -108,7 +114,7 @@ export default function CheckoutScreen({ navigation }) {
                 <Text style={styles.summaryTotal}>{formatCurrency(total)}</Text>
               </View>
               <View style={styles.codBadge}>
-                <Ionicons name="cash-outline" size={13} color={colors.accent || '#E84A27'} />
+                <Ionicons name="cash-outline" size={13} color={colors.accent || '#C9A24B'} />
                 <Text style={styles.codBadgeText}>COD Available</Text>
               </View>
             </View>
@@ -116,7 +122,7 @@ export default function CheckoutScreen({ navigation }) {
 
           <Animated.View style={[styles.card, cardStyle]}>
             <View style={styles.sectionLabel}>
-              <Ionicons name="location-outline" size={15} color={colors.accent || '#E84A27'} />
+              <Ionicons name="location-outline" size={15} color={colors.accent || '#C9A24B'} />
               <Text style={styles.sectionLabelText}>Shipping address</Text>
             </View>
 
@@ -171,25 +177,42 @@ const styles = StyleSheet.create({
     gap: 16,
     paddingBottom: 48
   },
-  headerBlock: {
+  headerRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    gap: 12,
     marginBottom: 4,
-    paddingHorizontal: 2
+    marginTop: Platform.OS === 'ios' ? 10 : 0,
+  },
+  backButton: {
+    width: 40,
+    height: 40,
+    borderRadius: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#1A1A22',
+    borderWidth: 1,
+    borderColor: 'rgba(255,255,255,0.1)'
+  },
+  headerBlock: {
+    flex: 1,
+    justifyContent: 'center'
   },
   eyebrow: {
-    color: colors.accent || '#E84A27',
+    color: colors.accent || '#C9A24B',
     fontSize: 10,
     fontWeight: '600',
     letterSpacing: 1.5,
-    marginBottom: 4
+    marginBottom: 2
   },
   title: {
     color: '#FFFFFF',
-    fontSize: 32,
+    fontSize: 28,
     fontWeight: '700',
     letterSpacing: -0.6
   },
   summaryCard: {
-    backgroundColor: 'rgba(255, 255, 255, 0.04)',
+    backgroundColor: '#1A1A22',
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.06)',
     borderRadius: 16,
@@ -227,21 +250,21 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     gap: 4,
-    backgroundColor: 'rgba(232, 74, 39, 0.1)',
+    backgroundColor: 'rgba(201, 162, 75, 0.1)',
     borderWidth: 1,
-    borderColor: 'rgba(232, 74, 39, 0.2)',
+    borderColor: 'rgba(201, 162, 75, 0.2)',
     borderRadius: 8,
     paddingHorizontal: 10,
     paddingVertical: 6
   },
   codBadgeText: {
-    color: colors.accent || '#E84A27',
+    color: colors.accent || '#C9A24B',
     fontWeight: '600',
     fontSize: 11,
     letterSpacing: 0.2
   },
   card: {
-    backgroundColor: 'rgba(255, 255, 255, 0.04)',
+    backgroundColor: '#1A1A22',
     borderWidth: 1,
     borderColor: 'rgba(255, 255, 255, 0.06)',
     borderRadius: 20,
@@ -267,7 +290,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 2
   },
   sectionLabelText: {
-    color: colors.accent || '#E84A27',
+    color: colors.accent || '#C9A24B',
     fontSize: 12,
     fontWeight: '600',
     textTransform: 'uppercase',

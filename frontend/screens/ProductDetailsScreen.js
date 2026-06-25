@@ -52,7 +52,7 @@ function SkeletonDetails() {
     return () => loop.stop();
   }, []);
 
-  const opacity = shimmer.interpolate({ inputRange: [0, 1], outputRange: [0.3, 0.6] });
+  const opacity = shimmer.interpolate({ inputRange: [0, 1], outputRange: [0.22, 0.5] });
 
   return (
     <View style={styles.content}>
@@ -124,7 +124,7 @@ export default function ProductDetailsScreen({ route, navigation }) {
       <Screen>
         <LinearGradient colors={['#0A0A0D', '#14141A']} style={StyleSheet.absoluteFill} />
         <Pressable style={styles.back} onPress={() => navigation.goBack()}>
-          <Ionicons name="chevron-back" size={20} color={colors.ink || '#FFFFFF'} />
+          <Ionicons name="chevron-back" size={20} color="#FFFFFF" />
         </Pressable>
         <SkeletonDetails />
       </Screen>
@@ -220,9 +220,9 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: 'rgba(255,255,255,0.03)',
+    backgroundColor: 'rgba(255,255,255,0.05)',
     borderWidth: 1,
-    borderColor: 'rgba(255,255,255,0.06)',
+    borderColor: 'rgba(255,255,255,0.1)',
     marginLeft: spacing.lg,
     marginTop: spacing.sm
   },
@@ -245,21 +245,21 @@ const styles = StyleSheet.create({
     gap: 12
   },
   category: {
-    color: colors.accent || '#E84A27',
+    color: colors.accent || '#C9A24B',
     fontWeight: '600',
     fontSize: 11,
     textTransform: 'uppercase',
     letterSpacing: 1.2
   },
   title: {
-    color: colors.ink || '#FFFFFF',
+    color: '#FFFFFF',
     fontSize: 28,
     lineHeight: 34,
     fontWeight: '700',
     letterSpacing: -0.6
   },
   price: {
-    color: colors.ink || '#FFFFFF',
+    color: '#FFFFFF',
     fontSize: 22,
     fontWeight: '700',
     letterSpacing: -0.2
@@ -280,7 +280,7 @@ const styles = StyleSheet.create({
     gap: 12
   },
   label: {
-    color: colors.ink || '#FFFFFF',
+    color: '#FFFFFF',
     fontWeight: '600',
     fontSize: 14,
     letterSpacing: -0.1
@@ -298,15 +298,15 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderColor: 'rgba(255,255,255,0.12)',
-    backgroundColor: 'rgba(255,255,255,0.04)',
+    backgroundColor: '#1A1A22',
     paddingHorizontal: 12
   },
   selectedSize: {
-    backgroundColor: colors.ink || '#FFFFFF',
-    borderColor: colors.ink || '#FFFFFF'
+    backgroundColor: '#FFFFFF',
+    borderColor: '#FFFFFF'
   },
   sizeText: {
-    color: colors.ink || '#FFFFFF',
+    color: '#FFFFFF',
     fontWeight: '600',
     fontSize: 14
   },
@@ -351,7 +351,7 @@ const styles = StyleSheet.create({
     marginBottom: 2
   },
   bottomPrice: {
-    color: colors.ink || '#FFFFFF',
+    color: '#FFFFFF',
     fontSize: 20,
     fontWeight: '700',
     letterSpacing: -0.4
@@ -360,12 +360,12 @@ const styles = StyleSheet.create({
     width: '100%',
     aspectRatio: 0.92,
     borderRadius: 20,
-    backgroundColor: 'rgba(255,255,255,0.04)',
+    backgroundColor: '#1A1A22',
     marginBottom: 16
   },
   skeletonLine: {
     borderRadius: 4,
-    backgroundColor: 'rgba(255,255,255,0.04)',
+    backgroundColor: '#1A1A22',
     marginVertical: 4
   }
 });
